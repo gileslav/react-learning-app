@@ -5,3 +5,7 @@
     padding: 10px;
     width: 50%;
 }
+
+.softEdge {
+	border: 1px solid #5f595970;
+}

@@ -1,0 +1,52 @@
+.formDiv {
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.blackBorder {
+	border: 1px solid black;
+}
+
+.gridCentralize {
+	margin-top: 25%;
+	height: 200px;
+	margin-bottom: 10%;
+}
+
+.upperPart {
+	height: 65%;
+
+}
+
+.lowerPart {
+	height: 30%;
+}
+
+.divWithSmallerWidth {
+	border: 1px solid #5f595970;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.left35 {
+	width: 35%;
+}
+
+.right55 {
+	width: 55%;
+}
+
+.iconics{
+	font-size: 25px;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.inputZaObjavu {
+	width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+}
