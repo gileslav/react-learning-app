@@ -9,27 +9,49 @@ class App extends Component {
   state={
         comments: [
           {
-            id:'1', title:'Probna trka danas',text:'Obavestavamo sve ucesnike da ce se probna trka odrzati 15.02.2025. godine na Cupriji, sa pocetkom u 15h'
+            id:'1', text:'Obavestavamo sve ucesnike da ce se probna trka odrzati 15.02.2025. godine na Cupriji, sa pocetkom u 15h'
           },
           
           {
-            id:'2', title:'Glavna trka', text:'Obavestavamo sve ucenike da ce se glavna trka odrzati 18.02.2025. godine na Cupriji, sa pocetkom u 15h'
+            id:'2', text:'Obavestavamo sve ucenike da ce se glavna trka odrzati 18.02.2025. godine na Cupriji, sa pocetkom u 15h'
           },
 
           {
-            id:'3', title:'Sponzori trke',text:'Sponzori trke su Voda Voda, Vlasinska Rosa i Knjaz Milos'
+            id:'3', text:'Sponzori trke su Voda Voda, Vlasinska Rosa i Knjaz Milos'
           }
         ]
       };
 
  
+  _addingCommentHandler = ()=>{
+    console.log('Probni');
+    this.setState(
+            
+                {comments: [
+                          {
+                            id:1, text:'Proba'
+                          },
+                          
+                          {
+                            id:2, text:'Aloha'
+                          },
 
-    _addingCommentHandler= () =>{
-      let commentsNew = [...this.state.comments];
-      commentsNew.push({title:document.getElementById('titleAdding').value,text:document.getElementById('textAdding').value});
-      this.setState({comments:commentsNew});
-      console.log('here is updated');
-    }
+                          {
+                            id:3, text:'Lele'
+                          }
+                        ]}
+            )
+  }
+  
+  _editingCommentHandler = () => {
+    let oldComments = [...this.state.comments];
+    let newComment = document.getElementById("myInput").value;
+    oldComments.push({id:oldComments.length,text:newComment});
+    this.setState({comments:oldComments})
+    document.getElementById("myInput").value = "";
+  }
+
+ 
 
   render() {
 
@@ -39,20 +61,18 @@ class App extends Component {
        <div>
          {this.state.comments.map((comment, index)=>{
          return<Comments
-                 title={comment.title}
                   text={comment.text}
-                  key={comment.id}
+                  key={index}
                   />
          })}
         </div>
      )
-    //<AddingNewComment click={()=>this._addingCommentHandler}/>
         
     return (
       <div className="App">
         {comments}
-        <CommentsForm click={()=>this._addingCommentHandler}/>
-        
+        <CommentsForm click={this._editingCommentHandler}/>
+       
       </div>
     );
   }

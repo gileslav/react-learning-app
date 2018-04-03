@@ -12,7 +12,7 @@ const commentsForm = (props) => {
           
           <Col>
            <FormGroup className="inputZaObjavu">
-           <FormControl type="text"/>
+           <FormControl type="text" id="myInput"/>
            </FormGroup>
           </Col>
 
@@ -31,12 +31,13 @@ const commentsForm = (props) => {
              <Form inline>
              
                 <FormGroup controlId="formInlineName">
-                  <Button bsStyle="info" onClick="{props.click}">Povecaj vidljivost objave</Button>
+                  <Button bsStyle="info" >Povecaj vidljivost objave</Button>
                 </FormGroup>{' '}
                 <SplitButton
                   id="pimariusDugme" 
                   bsStyle="primary"
-                  title="Objavi">
+                  title="Objavi"
+                  onClick={props.click}>
                   <MenuItem eventKey="1">Proba</MenuItem>
                   <MenuItem eventKey="2">Test</MenuItem>
                 </SplitButton>

@@ -5,19 +5,13 @@ import './Comments.css';
 const comments = (props) => {
 
     return (
-            
-            <Grid className="formDiv">
-                <div className="softEdge">
-                <Col xs={6} md={4}>
-                    <p>{props.title}</p>
-                </Col>
-                
-                <Col xs={12} md={8}>
+            <div className="uperDiv">
+            <Grid className="notesDiv">
+                <Col xs={12} md={8} className="softEdge">
                     <p>{props.text}</p>
                 </Col>
-                </div>
             </Grid>
-            
+            </div>
   
     )
 };
